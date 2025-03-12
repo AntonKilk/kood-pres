@@ -425,7 +425,16 @@ function addPlanetLabel(position, size, number) {
     div.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
     
     // Add number inside
-    div.innerHTML = `<span style="color: white; font-size: 1.2em; font-weight: bold;">${number}</span>`;
+    const numberSpan = document.createElement('span');
+    numberSpan.textContent = number;
+    numberSpan.style.color = 'white';
+    numberSpan.style.fontSize = '1.2em';
+    numberSpan.style.fontWeight = 'bold';
+    numberSpan.style.position = 'absolute';
+    numberSpan.style.top = '50%';
+    numberSpan.style.left = '50%';
+    numberSpan.style.transform = 'translate(-50%, -50%)';
+    div.appendChild(numberSpan);
     
     // Add arrow pointing down to the planet
     const arrow = document.createElement('div');
