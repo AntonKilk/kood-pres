@@ -1,178 +1,202 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
 /* CSS2D Label Renderer */
 .css2d-renderer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 /* Planet label styling */
 .planet-label {
-    transition: transform 0.2s ease;
-    user-select: none;
+  transition: transform 0.2s ease;
+  user-select: none;
 }
 
 .planet-label:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .planet-label-circle {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(40, 40, 40, 0.8);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(40, 40, 40, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .planet-label-number {
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .planet-label-arrow {
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 12px solid rgba(40, 40, 40, 0.8);
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid rgba(40, 40, 40, 0.8);
 }
 
 /* Slide container */
 #slideContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 /* Back button */
 #backButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 15px;
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 20;
-    display: none;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 20;
+  display: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #backButton:hover {
-    background-color: #3498db;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background-color: #3498db;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Slide styling */
 .slide {
-    display: none;
-    width: 80%;
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
-    overflow: auto;
-    transition: all 0.5s ease;
+  display: none;
+  width: 80%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  overflow: auto;
+  transition: all 0.5s ease;
 }
 
 .slide h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #3498db;
-    border-bottom: 1px solid #3498db;
-    padding-bottom: 10px;
-    text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #3498db;
+  border-bottom: 1px solid #3498db;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .slide ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .slide li {
-    line-height: 1.6;
-    margin-bottom: 8px;
+  line-height: 1.6;
+  margin-bottom: 8px;
 }
 
 .slide ul ul {
-    margin-top: 5px;
-    margin-left: 20px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 /* Image gallery */
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .image-wrapper {
-    width: 45%;
-    margin-bottom: 20px;
+  width: 45%;
+  margin-bottom: 20px;
 }
 
 .image-placeholder {
-    height: 180px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 8px;
-    background-image: linear-gradient(45deg, hsla(0, 0%, 0%, 0.2) 25%, transparent 25%, transparent 50%, hsla(0, 0%, 0%, 0.2) 50%, hsla(0, 0%, 0%, 0.2) 75%, transparent 75%, transparent);
-    background-size: 20px 20px;
+  height: 180px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  background-image: linear-gradient(
+    45deg,
+    hsla(0, 0%, 0%, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    hsla(0, 0%, 0%, 0.2) 50%,
+    hsla(0, 0%, 0%, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+}
+
+.real-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.real-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
 }
 
 .image-placeholder span {
-    color: white;
-    font-weight: bold;
-    text-shadow: 0 0 5px black;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
 }
 
 .image-description {
-    text-align: center;
-    font-size: 0.9em;
-    color: #ccc;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ccc;
 }
