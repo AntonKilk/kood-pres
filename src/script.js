@@ -1,8 +1,10 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { CSS2DRenderer, CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 
 // Main variables
 let camera, scene, renderer, controls;
+let labelRenderer; // For CSS2D labels
 let planets = [];
 let raycaster, mouse;
 let currentPlanet = null;
@@ -24,6 +26,14 @@ function init() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    
+    // Label renderer
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '0';
+    labelRenderer.domElement.style.pointerEvents = 'none';
+    document.body.appendChild(labelRenderer.domElement);
     
     // Controls
     controls = new OrbitControls(camera, renderer.domElement);
@@ -152,6 +162,9 @@ function createPlanets() {
         
         // Add orbit rings
         addOrbitRing(data.position, data.size + 0.5, data.color);
+        
+        // Add number label
+        addPlanetLabel(data.position, data.size, index + 1);
     });
 }
 
@@ -326,6 +339,7 @@ function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 // Track mouse movement
@@ -394,6 +408,22 @@ function animateCamera(targetPosition, lookAtTarget, duration, callback) {
     updateCamera();
 }
 
+// Function to add a number label to a planet
+function addPlanetLabel(position, size, number) {
+    const div = document.createElement('div');
+    div.className = 'planet-label';
+    div.textContent = number;
+    div.style.color = 'white';
+    div.style.fontSize = '1.5em';
+    div.style.fontWeight = 'bold';
+    div.style.textShadow = '0 0 8px black, 0 0 5px black';
+    div.style.userSelect = 'none';
+    
+    const label = new CSS2DObject(div);
+    label.position.set(position.x, position.y + size + 0.5, position.z);
+    scene.add(label);
+}
+
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
@@ -431,6 +461,7 @@ function animate() {
     }
     
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
 }
 
 // Initialize the scene
