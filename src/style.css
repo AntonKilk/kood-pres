@@ -27,3 +27,13 @@ body {
 .slide {
     transition: all 0.5s ease;
 }
+
+/* Planet label animations */
+.planet-label {
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.planet-label:hover {
+    transform: scale(1.2);
+}

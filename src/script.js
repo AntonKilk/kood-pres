@@ -412,15 +412,37 @@ function animateCamera(targetPosition, lookAtTarget, duration, callback) {
 function addPlanetLabel(position, size, number) {
     const div = document.createElement('div');
     div.className = 'planet-label';
-    div.textContent = number;
-    div.style.color = 'white';
-    div.style.fontSize = '1.5em';
-    div.style.fontWeight = 'bold';
-    div.style.textShadow = '0 0 8px black, 0 0 5px black';
-    div.style.userSelect = 'none';
+    
+    // Create arrow container
+    div.style.width = '40px';
+    div.style.height = '40px';
+    div.style.backgroundColor = 'rgba(40, 40, 40, 0.8)';
+    div.style.borderRadius = '50%';
+    div.style.display = 'flex';
+    div.style.justifyContent = 'center';
+    div.style.alignItems = 'center';
+    div.style.position = 'relative';
+    div.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.3)';
+    
+    // Add number inside
+    div.innerHTML = `<span style="color: white; font-size: 1.2em; font-weight: bold;">${number}</span>`;
+    
+    // Add arrow pointing down to the planet
+    const arrow = document.createElement('div');
+    arrow.style.position = 'absolute';
+    arrow.style.bottom = '-12px';
+    arrow.style.left = '50%';
+    arrow.style.transform = 'translateX(-50%)';
+    arrow.style.width = '0';
+    arrow.style.height = '0';
+    arrow.style.borderLeft = '10px solid transparent';
+    arrow.style.borderRight = '10px solid transparent';
+    arrow.style.borderTop = '12px solid rgba(40, 40, 40, 0.8)';
+    div.appendChild(arrow);
     
     const label = new CSS2DObject(div);
-    label.position.set(position.x, position.y + size + 0.5, position.z);
+    // Position the label above the planet
+    label.position.set(position.x, position.y + size + 1.5, position.z);
     scene.add(label);
 }
 
