@@ -1,6 +1,12 @@
 // Import images
 import pussiImage from "../assets/images/slides/slide1/pussi.png";
-
+import dogImage from "../assets/images/slides/slide1/dog.png";
+import epLabImage from "../assets/images/slides/slide1/eplab.png";
+import finlandImage from "../assets/images/slides/slide1/finland.png";
+import firstSteps from "../assets/images/slides/slide2/firststeps.png";
+import palmsImage from "../assets/images/slides/slide2/palms.png";
+import hiveImage from "../assets/images/slides/slide2/hive.png";
+import moneyImage from "../assets/images/slides/slide2/money.png";
 // Setup slide content and containers
 function setupSlides(planets, exitPlanetViewCallback, showSlideCallback) {
   createSlideContainers(exitPlanetViewCallback, showSlideCallback);
@@ -206,9 +212,9 @@ function getSlideContent(index) {
 function getSlideImageSources(index) {
   const imageSources = [
     // Background - Slide 1
-    [pussiImage, null, null, null],
+    [pussiImage, dogImage, epLabImage, finlandImage],
     // Motivation - Slide 2
-    [null, null, null, null],
+    [firstSteps, hiveImage, moneyImage, palmsImage],
     // Bootcamp - Slide 3
     [null, null, null, null],
     // Education - Slide 4
@@ -230,17 +236,17 @@ function getImageDescriptions(index) {
   const descriptions = [
     // Background
     [
-      "home, sweet home",
+      "Home, sweet home",
       "First programming projects in Java and C++",
       "Medical engineering workplace",
       "Finland's tech landscape",
     ],
     // Motivation
     [
-      "Remote work visualization",
-      "JavaScript learning resources",
+      "JavaScript first steps",
       "Hive Helsinki campus",
-      "Career transition planning",
+      "100 k per minute",
+      "Remote work",
     ],
     // Bootcamp
     [

@@ -24,22 +24,26 @@ This project presents my programming journey as an interactive 3D space experien
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/your-username/programming-journey-presentation.git
 cd programming-journey-presentation
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
 
 4. Build for production:
+
 ```bash
 npm run build
 ```
@@ -47,10 +51,6 @@ npm run build
 ## Deployment
 
 This project is deployed using [Netlify/GitHub Pages/Your hosting service].
-
-## License
-
-[Choose an appropriate license or remove this section]
 
 ## Acknowledgments
 
