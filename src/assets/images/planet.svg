@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Planet body -->
+  <circle cx="32" cy="32" r="28" fill="#3498db" />
+  
+  <!-- Planet texture/craters -->
+  <circle cx="20" cy="22" r="4" fill="#2980b9" opacity="0.7" />
+  <circle cx="42" cy="18" r="3" fill="#2980b9" opacity="0.5" />
+  <circle cx="48" cy="36" r="5" fill="#2980b9" opacity="0.6" />
+  <circle cx="28" cy="44" r="6" fill="#2980b9" opacity="0.8" />
+  <circle cx="15" cy="38" r="3" fill="#2980b9" opacity="0.5" />
+  
+  <!-- Planet ring -->
+  <ellipse cx="32" cy="32" rx="32" ry="8" fill="none" stroke="#e74c3c" stroke-width="1.5" transform="rotate(-15 32 32)" />
+  
+  <!-- Highlights -->
+  <circle cx="24" cy="24" r="12" fill="white" opacity="0.15" />
+  <circle cx="22" cy="22" r="1.5" fill="white" opacity="0.8" />
+  <circle cx="26" cy="18" r="1" fill="white" opacity="0.6" />
+</svg>
