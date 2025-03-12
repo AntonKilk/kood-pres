@@ -7,6 +7,28 @@ import firstSteps from "../assets/images/slides/slide2/firststeps.png";
 import palmsImage from "../assets/images/slides/slide2/palms.png";
 import hiveImage from "../assets/images/slides/slide2/hive.png";
 import moneyImage from "../assets/images/slides/slide2/money.png";
+import swimImage from "../assets/images/slides/slide3/swimming.png";
+import clangImage from "../assets/images/slides/slide3/clang.png";
+import hiveCluster from "../assets/images/slides/slide4/hivecluster.png";
+import flowImage from "../assets/images/slides/slide4/flow.png";
+import fdfImage from "../assets/images/slides/slide4/fdf.png";
+import holyGraph from "../assets/images/slides/slide4/holygraph.png";
+import jobImage from "../assets/images/slides/slide5/job.png";
+import tietoEvry from "../assets/images/slides/slide5/tieto.png";
+import podiumImage from "../assets/images/slides/slide5/podium.png";
+import gamesGlobal from "../assets/images/slides/slide5/gamesglobal.png";
+import environmentsImage from "../assets/images/slides/slide6/environments.png";
+import designImage from "../assets/images/slides/slide6/design.png";
+import tddImage from "../assets/images/slides/slide6/tdd.png";
+import pairingImage from "../assets/images/slides/slide6/pairing.png";
+import pseudocodeImage from "../assets/images/slides/slide7/pseudocode.png";
+import peerToPeer from "../assets/images/slides/slide7/peertopeer.png";
+import testImage from "../assets/images/slides/slide7/test.png";
+import gitImage from "../assets/images/slides/slide7/git.png";
+import expectation from "../assets/images/slides/slide8/expectation.png";
+import tgBotImage from "../assets/images/slides/slide8/tgbot.png";
+import newdogImage from "../assets/images/slides/slide8/newdog.png";
+import cherrypicko from "../assets/images/slides/slide8/cherry.png";
 // Setup slide content and containers
 function setupSlides(planets, exitPlanetViewCallback, showSlideCallback) {
   createSlideContainers(exitPlanetViewCallback, showSlideCallback);
@@ -39,7 +61,7 @@ function createSlideContainers(exitPlanetViewCallback, showSlideCallback) {
 
     // Create content based on slide number
     const content = document.createElement("div");
-    content.innerHTML = getSlideContent(i);
+    // content.innerHTML = getSlideContent(i);
     slide.appendChild(content);
 
     // Create image gallery
@@ -216,17 +238,17 @@ function getSlideImageSources(index) {
     // Motivation - Slide 2
     [firstSteps, hiveImage, moneyImage, palmsImage],
     // Bootcamp - Slide 3
-    [null, null, null, null],
+    [swimImage, clangImage],
     // Education - Slide 4
-    [null, null, null, null],
+    [hiveCluster, flowImage, fdfImage, holyGraph],
     // Job Search - Slide 5
-    [null, null, null, null],
+    [jobImage, tietoEvry, podiumImage, gamesGlobal],
     // Engineering Practices - Slide 6
-    [null, null, null, null],
+    [environmentsImage, designImage, tddImage, pairingImage],
     // Advice - Slide 7
-    [null, null, null, null],
+    [peerToPeer, pseudocodeImage, testImage, gitImage],
     // Conclusions - Slide 8
-    [null, null, null, null],
+    [expectation, cherrypicko, newdogImage],
   ];
   return imageSources[index];
 }
@@ -249,46 +271,40 @@ function getImageDescriptions(index) {
       "Remote work",
     ],
     // Bootcamp
-    [
-      "Bootcamp collaborative environment",
-      "C programming exercises",
-      "Command line interface mastery",
-      "Bootcamp celebration",
-    ],
+    ["Bootcamp collaborative environment", "C programming exercises"],
     // Education at Hive
     [
-      "Project-based learning approach",
-      "Peer review sessions",
-      "Different specialization paths diagram",
+      "Hive campus",
       "Flow state coding session",
+      "Graphics branch project",
+      "Holy graph",
     ],
     // Job Search
     [
-      "First job application process",
-      "Technical interview preparation",
+      "First job searching attempts",
       "Tietoevry company headquarters",
-      "Medical CRM project visualization",
+      "Small family firm",
+      "Games Global",
     ],
     // Engineering Practices
     [
       "Development environment setup",
-      "Automated testing workflow",
-      "GitLab code review process",
-      "Dynamic form rendering project",
+      "Feature design documentation",
+      "Test Driven Development",
+      "Pair programming",
     ],
     // Advice
     [
-      "Code review best practices",
-      "Testing methodology diagram",
-      "Git branching strategy",
-      "Team communication structure",
+      "Peer to peer learning advantages",
+      "Pseudocode before coding",
+      "Testing, testing, testing",
+      "Master Git",
     ],
     // Conclusions
     [
-      "Career progress timeline",
-      "Telegram bot project screenshot",
+      "Expectations vs reality",
       "AI media content chat interface",
-      "Work-life balance reality",
+      "I know what I am doing!",
     ],
   ];
   return descriptions[index];
