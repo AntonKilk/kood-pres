@@ -6,6 +6,7 @@ import { setupScene } from './scene.js';
 import { createPlanets } from './planets.js';
 import { setupSlides } from './slides.js';
 import { animate } from './animation.js';
+import { setupFavicon } from './favicon.js';
 
 // Main variables
 let camera, scene, renderer, labelRenderer, controls;
@@ -16,6 +17,9 @@ let planets = [];
 
 // Initialize the application
 function init() {
+    // Setup favicon
+    setupFavicon();
+    
     // Setup scene, camera and renderers
     const sceneSetup = setupScene();
     scene = sceneSetup.scene;
